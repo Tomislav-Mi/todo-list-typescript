@@ -1,4 +1,4 @@
-# ToDoddle ((React study project # 3 )
+# ToDoddle (React study project # 3 )
 - Simplest app for todos
 
 ## Key Features
