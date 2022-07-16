@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Todos from "./components/Todos";
 import Todo from "./models/todo";
 
-import './App.css';
+
 import NewTodo from "./components/NewTodo";
 
 function App() {
@@ -16,10 +16,20 @@ function App() {
         })
     };
 
+    const deleteTodoItemHandler = (todoId: string) => {
+        setTodos(prevState => {
+            const updatedTodos = prevState.filter(todo => todo.id !== todoId);
+            return updatedTodos;
+        })
+    };
+
     return (
         <div>
             <NewTodo onAddTodo={addTodoHandler}/>
-            <Todos items={todos}/>
+            <Todos
+                items={todos}
+                onRemoveTodo={deleteTodoItemHandler}
+            />
         </div>
     );
 }
